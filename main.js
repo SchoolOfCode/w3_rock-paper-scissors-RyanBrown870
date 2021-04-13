@@ -22,32 +22,34 @@ let computerMove = moveSet[Math.floor(Math.random() * 3)];
 
 let playerMove = prompt('move');
 
-if (playerMove === 'paper') {
-  if (computerMove === 'rock') {
-    console.log('paper player wins');
-  } else if (computerMove === 'scissors') {
-    console.log('scissors computer wins');
-  } else {
-    console.log('paper draw');
+function game(player, computer) {
+  if (player === 'paper') {
+    if (computer === 'rock') {
+      console.log('paper player wins');
+    } else if (computer === 'scissors') {
+      console.log('scissors computer wins');
+    } else {
+      console.log('paper draw');
+    }
   }
-}
 
-if (playerMove === 'rock') {
-  if (computerMove === 'paper') {
-    console.log('rock computer wins');
-  } else if (computerMove === 'scissors') {
-    console.log('rock player wins');
-  } else {
-    console.log('rock draw');
+  if (player === 'rock') {
+    if (computer === 'paper') {
+      console.log('rock computer wins');
+    } else if (computer === 'scissors') {
+      console.log('rock player wins');
+    } else {
+      console.log('rock draw');
+    }
   }
-}
 
-if (playerMove === 'scissors') {
-  if (computerMove === 'rock') {
-    console.log('scissors computer wins');
-  } else if (computerMove === 'paper') {
-    console.log('scissors player wins');
-  } else {
-    console.log('scissors draw');
+  if (player === 'scissors') {
+    if (computer === 'rock') {
+      console.log('scissors computer wins');
+    } else if (computer === 'paper') {
+      console.log('scissors player wins');
+    } else {
+      console.log('scissors draw');
+    }
   }
 }
