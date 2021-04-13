@@ -16,24 +16,23 @@
 
 // rock - rock
 
-let moveSet = ['rock', 'paper', 'scissors'];
-let computerMove = moveSet[Math.floor(Math.random() * 3)];
+function genComputerMove() {
+  let moveSet = ['rock', 'paper', 'scissors'];
+  return moveSet[Math.floor(Math.random() * 3)];
+}
+
+let computerMove = genComputerMove();
 
 let playerMove = prompt('move');
-console.log('player is', playerMove);
-console.log('computer is', computerMove);
 
 function game(player, computer) {
   if (player === 'paper') {
     if (computer === 'rock') {
       return 1;
-      console.log('paper player wins');
     } else if (computer === 'scissors') {
       return -1;
-      console.log('scissors computer wins');
     } else {
       return 0;
-      console.log('paper draw');
     }
   }
 
@@ -59,4 +58,6 @@ function game(player, computer) {
 }
 
 let result = game(playerMove, computerMove);
-alert(result);
+alert(
+  `Player is ${playerMove}, computer is ${computerMove}, Result is ${result}`
+);
