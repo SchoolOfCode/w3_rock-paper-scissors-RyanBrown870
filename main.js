@@ -21,10 +21,6 @@ function genComputerMove() {
   return moveSet[Math.floor(Math.random() * 3)];
 }
 
-let computerMove = genComputerMove();
-
-let playerMove = prompt('move');
-
 function game(player, computer) {
   if (player === 'paper') {
     if (computer === 'rock') {
@@ -57,7 +53,16 @@ function game(player, computer) {
   }
 }
 
-let result = game(playerMove, computerMove);
-alert(
-  `Player is ${playerMove}, computer is ${computerMove}, Result is ${result}`
-);
+let playOn = true;
+while (playOn === true) {
+  let computerMove = genComputerMove();
+  let playerMove = prompt('move');
+
+  let result = game(playerMove, computerMove);
+
+  alert(
+    `Player is ${playerMove}, computer is ${computerMove}, Result is ${result}`
+  );
+
+  playOn = confirm('Play again?');
+}
