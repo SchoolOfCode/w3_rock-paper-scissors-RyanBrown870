@@ -1,27 +1,21 @@
-// PAPER - rock
-
-// rock - PAPER
-
-// ROCK - scissors
-
-// scissors - ROCK
-
-// SCISSORS - paper
-
-// paper - SCISSORS
-
-// paper - paper
-
-// scissors - scissors
-
-// rock - rock
+let gameData = {
+  playerMove: '',
+  computerMove: '',
+  playOn: true,
+  result: '',
+  score: 0,
+  numOfGames: 0,
+  wins: 0,
+  draws: 0,
+  losses: 0,
+};
 
 function genComputerMove() {
   let moveSet = ['rock', 'paper', 'scissors'];
   return moveSet[Math.floor(Math.random() * 3)];
 }
 
-function game(player, computer) {
+function calcWinner(player, computer) {
   if (player === 'paper') {
     if (computer === 'rock') {
       return 1;
@@ -53,22 +47,25 @@ function game(player, computer) {
   }
 }
 
-let gameData = {
-  playOn: true,
-  score: 0,
-  numOfGames: 0,
-  wins: 0,
-  draws: 0,
-  losses: 0,
-};
+function displayResult() {
+  let pTagResult = document.createElement('p');
+  let node = document.createTextNode(
+    `Player is ${gameData.playerMove}, computer is ${gameData.computerMove}, result is ${gameData.result}. Score is ${gameData.score}. Games played: ${gameData.numOfGames}. Total wins: ${gameData.wins}. Total draws: ${gameData.draws}. Total losses: ${gameData.losses}.`
+  );
+  pTagResult.appendChild(node);
+  let container = document.getElementById('gameStats');
+  container.appendChild(pTagResult);
+}
 
-while (gameData.playOn === true) {
+function playGame(playerMove) {
   let computerMove = genComputerMove();
-  let playerMove = prompt('move');
 
-  let result = game(playerMove, computerMove);
+  let result = calcWinner(playerMove, computerMove);
 
-  // Update records
+  // Update game data
+  gameData.result = result;
+  gameData.playerMove = playerMove;
+  gameData.computerMove = computerMove;
   gameData.score += result;
   gameData.numOfGames++;
   if (result === 1) {
@@ -79,9 +76,5 @@ while (gameData.playOn === true) {
     gameData.losses++;
   }
 
-  alert(
-    `Player is ${playerMove}, computer is ${computerMove}, Result is ${result}. Score is ${gameData.score}. Games played: ${gameData.numOfGames}. Total wins: ${gameData.wins}. Total draws: ${gameData.draws}. Total losses: ${gameData.losses}.`
-  );
-
-  gameData.playOn = confirm('Play again?');
+  displayResult();
 }
