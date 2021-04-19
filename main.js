@@ -69,12 +69,7 @@ function displayResult() {
   toggleDisplay();
 }
 
-function playGame(playerMove) {
-  let computerMove = genComputerMove();
-
-  let result = calcWinner(playerMove, computerMove);
-
-  // Update game data
+function updateResults(result, playerMove, computerMove) {
   gameData.result = result;
   gameData.playerMove = playerMove;
   gameData.computerMove = computerMove;
@@ -87,6 +82,13 @@ function playGame(playerMove) {
   } else {
     gameData.losses++;
   }
+}
 
+function playGame(playerMove) {
+  let computerMove = genComputerMove();
+
+  let result = calcWinner(playerMove, computerMove);
+
+  updateResults(result, playerMove, computerMove);
   displayResult();
 }
