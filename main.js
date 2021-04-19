@@ -16,13 +16,12 @@
 
 // rock - rock
 
-let result;
 let moveSet = ['rock', 'paper', 'scissors'];
 let computerMove = moveSet[Math.floor(Math.random() * 3)];
 
 let playerMove = prompt('move');
-// console.log('player is', playerMove);
-// console.log('computer is', computerMove);
+console.log('player is', playerMove);
+console.log('computer is', computerMove);
 
 function game(player, computer) {
   if (player === 'paper') {
@@ -60,3 +59,4 @@ function game(player, computer) {
 }
 
 let result = game(playerMove, computerMove);
+alert(result);
