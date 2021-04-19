@@ -25,10 +25,29 @@ function formSubmit() {
     alert('Your username must begin with an uppercase letter');
   } else {
     gameData.user = username;
+    console.log(gameData);
   }
+
+  let commandMsg = document.getElementById('command-msg');
+  commandMsg.innerText = `${gameData.user} Select your tool to play!`;
 }
 
-//
+// Add enter keydown listener
+// Bug - clears the console, is it firing multiple times?
+document.getElementById('username-input').addEventListener(
+  'keyup',
+  (event) => {
+    if (event.defaultPrevented) {
+      return;
+    }
+    if (event.key === 'Enter') {
+      console.log('enter event listener');
+      formSubmit();
+    }
+    event.preventDefault;
+  },
+  true
+);
 
 function genComputerMove() {
   let moveSet = ['rock', 'paper', 'scissors'];
