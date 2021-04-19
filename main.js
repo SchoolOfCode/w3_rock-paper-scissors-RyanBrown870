@@ -47,14 +47,24 @@ function calcWinner(player, computer) {
   }
 }
 
+function toggleDisplay() {
+  let resultsContainer = document.getElementById('results-container');
+  let gameContainer = document.getElementById('game-container');
+  let resultsContainerStyle = window.getComputedStyle(
+    document.getElementById('results-container')
+  ).display;
+
+  resultsContainerStyle === 'none'
+    ? ((resultsContainer.style.display = 'block'),
+      (gameContainer.style.display = 'none'))
+    : ((resultsContainer.style.display = 'none'),
+      (gameContainer.style.display = 'block'));
+}
+
 function displayResult() {
-  let pTagResult = document.createElement('p');
-  let node = document.createTextNode(
-    `Player is ${gameData.playerMove}, computer is ${gameData.computerMove}, result is ${gameData.result}. Score is ${gameData.score}. Games played: ${gameData.numOfGames}. Total wins: ${gameData.wins}. Total draws: ${gameData.draws}. Total losses: ${gameData.losses}.`
-  );
-  pTagResult.appendChild(node);
-  let container = document.getElementById('gameStats');
-  container.appendChild(pTagResult);
+  let pTagResult = document.getElementById('game-data-text');
+  pTagResult.innerText = `Player is ${gameData.playerMove}, computer is ${gameData.computerMove}, result is ${gameData.result}. Score is ${gameData.score}. Games played: ${gameData.numOfGames}. Total wins: ${gameData.wins}. Total draws: ${gameData.draws}. Total losses: ${gameData.losses}.`;
+  toggleDisplay();
 }
 
 function playGame(playerMove) {
