@@ -8,7 +8,46 @@ let gameData = {
   wins: 0,
   draws: 0,
   losses: 0,
+  user: '',
 };
+
+function formSubmit() {
+  let usernameInput = document.getElementById('username-input');
+  let username = usernameInput.value;
+
+  if (username.length > 10) {
+    alert('Your username must be 10 or fewer characters');
+  } else if (!username[0].match(/[a-zA-Z]/)) {
+    alert(
+      'Your username must begin with a letter. Numbers or special characters are not allowed.'
+    );
+  } else if (username[0].match(/[a-z]/)) {
+    alert('Your username must begin with an uppercase letter');
+  } else {
+    gameData.user = username;
+    console.log(gameData);
+  }
+
+  let commandMsg = document.getElementById('command-msg');
+  commandMsg.innerText = `${gameData.user} Select your tool to play!`;
+}
+
+// Add enter keydown listener
+// Bug - clears the console, is it firing multiple times?
+document.getElementById('username-input').addEventListener(
+  'keyup',
+  (event) => {
+    if (event.defaultPrevented) {
+      return;
+    }
+    if (event.key === 'Enter') {
+      console.log('enter event listener');
+      formSubmit();
+    }
+    event.preventDefault;
+  },
+  true
+);
 
 function genComputerMove() {
   let moveSet = ['rock', 'paper', 'scissors'];
@@ -64,17 +103,12 @@ function toggleDisplay() {
 }
 
 function displayResult() {
-  let pTagResult = document.getElementById('game-data-text');
-  pTagResult.innerText = `Player is ${gameData.playerMove}, computer is ${gameData.computerMove}, result is ${gameData.result}. Score is ${gameData.score}. Games played: ${gameData.numOfGames}. Total wins: ${gameData.wins}. Total draws: ${gameData.draws}. Total losses: ${gameData.losses}.`;
+  let p = document.getElementById('game-data-text');
+  p.innerText = `Player is ${gameData.playerMove}, computer is ${gameData.computerMove}, result is ${gameData.result}. Score is ${gameData.score}. Games played: ${gameData.numOfGames}. Total wins: ${gameData.wins}. Total draws: ${gameData.draws}. Total losses: ${gameData.losses}.`;
   toggleDisplay();
 }
 
-function playGame(playerMove) {
-  let computerMove = genComputerMove();
-
-  let result = calcWinner(playerMove, computerMove);
-
-  // Update game data
+function updateResults(result, playerMove, computerMove) {
   gameData.result = result;
   gameData.playerMove = playerMove;
   gameData.computerMove = computerMove;
@@ -87,6 +121,13 @@ function playGame(playerMove) {
   } else {
     gameData.losses++;
   }
+}
 
+function playGame(playerMove) {
+  let computerMove = genComputerMove();
+
+  let result = calcWinner(playerMove, computerMove);
+
+  updateResults(result, playerMove, computerMove);
   displayResult();
 }
