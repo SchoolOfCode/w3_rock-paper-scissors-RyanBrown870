@@ -53,16 +53,35 @@ function game(player, computer) {
   }
 }
 
-let playOn = true;
-while (playOn === true) {
+let gameData = {
+  playOn: true,
+  score: 0,
+  numOfGames: 0,
+  wins: 0,
+  draws: 0,
+  losses: 0,
+};
+
+while (gameData.playOn === true) {
   let computerMove = genComputerMove();
   let playerMove = prompt('move');
 
   let result = game(playerMove, computerMove);
 
+  // Update records
+  gameData.score += result;
+  gameData.numOfGames++;
+  if (result === 1) {
+    gameData.wins++;
+  } else if (result === 0) {
+    gameData.draws++;
+  } else {
+    gameData.losses++;
+  }
+
   alert(
-    `Player is ${playerMove}, computer is ${computerMove}, Result is ${result}`
+    `Player is ${playerMove}, computer is ${computerMove}, Result is ${result}. Score is ${gameData.score}. Games played: ${gameData.numOfGames}. Total wins: ${gameData.wins}. Total draws: ${gameData.draws}. Total losses: ${gameData.losses}.`
   );
 
-  playOn = confirm('Play again?');
+  gameData.playOn = confirm('Play again?');
 }
