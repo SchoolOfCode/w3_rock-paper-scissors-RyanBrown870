@@ -48,12 +48,14 @@ function calcWinner(player, computer) {
 }
 
 function toggleDisplay() {
+  // Get div elements and the current style applied
   let resultsContainer = document.getElementById('results-container');
   let gameContainer = document.getElementById('game-container');
   let resultsContainerStyle = window.getComputedStyle(
     document.getElementById('results-container')
   ).display;
 
+  // Check style of the results div and toggle display
   resultsContainerStyle === 'none'
     ? ((resultsContainer.style.display = 'block'),
       (gameContainer.style.display = 'none'))
