@@ -10,6 +10,17 @@
       <h1>Rock, Paper, Scissors</h1>
     </header>
     <main>
+      <form>
+        <input type="text" name="username" id="username-input" required />
+        <input
+          type="button"
+          name="submit"
+          value="submit"
+          id="username-submit"
+          onclick="formSubmit()"
+        />
+      </form>
+
       <div class="game" id="game-container">
         <h2>Select your tool to play!</h2>
         <button onclick="playGame(`rock`)">Rock</button>
@@ -23,6 +34,6 @@
       </div>
     </main>
     <footer></footer>
-    <script src="main.js" async defer></script>
+    <script src="app/main.js" async defer></script>
   </body>
 </html>

@@ -8,7 +8,27 @@ let gameData = {
   wins: 0,
   draws: 0,
   losses: 0,
+  user: '',
 };
+
+function formSubmit() {
+  let usernameInput = document.getElementById('username-input');
+  let username = usernameInput.value;
+
+  if (username.length > 10) {
+    alert('Your username must be 10 or fewer characters');
+  } else if (!username[0].match(/[a-zA-Z]/)) {
+    alert(
+      'Your username must begin with a letter. Numbers or special characters are not allowed.'
+    );
+  } else if (username[0].match(/[a-z]/)) {
+    alert('Your username must begin with an uppercase letter');
+  } else {
+    gameData.user = username;
+  }
+}
+
+//
 
 function genComputerMove() {
   let moveSet = ['rock', 'paper', 'scissors'];
@@ -64,8 +84,8 @@ function toggleDisplay() {
 }
 
 function displayResult() {
-  let pTagResult = document.getElementById('game-data-text');
-  pTagResult.innerText = `Player is ${gameData.playerMove}, computer is ${gameData.computerMove}, result is ${gameData.result}. Score is ${gameData.score}. Games played: ${gameData.numOfGames}. Total wins: ${gameData.wins}. Total draws: ${gameData.draws}. Total losses: ${gameData.losses}.`;
+  let p = document.getElementById('game-data-text');
+  p.innerText = `Player is ${gameData.playerMove}, computer is ${gameData.computerMove}, result is ${gameData.result}. Score is ${gameData.score}. Games played: ${gameData.numOfGames}. Total wins: ${gameData.wins}. Total draws: ${gameData.draws}. Total losses: ${gameData.losses}.`;
   toggleDisplay();
 }
 
