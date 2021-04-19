@@ -1,27 +1,21 @@
-// PAPER - rock
-
-// rock - PAPER
-
-// ROCK - scissors
-
-// scissors - ROCK
-
-// SCISSORS - paper
-
-// paper - SCISSORS
-
-// paper - paper
-
-// scissors - scissors
-
-// rock - rock
+let gameData = {
+  playerMove: '',
+  computerMove: '',
+  playOn: true,
+  result: '',
+  score: 0,
+  numOfGames: 0,
+  wins: 0,
+  draws: 0,
+  losses: 0,
+};
 
 function genComputerMove() {
   let moveSet = ['rock', 'paper', 'scissors'];
   return moveSet[Math.floor(Math.random() * 3)];
 }
 
-function game(player, computer) {
+function calcWinner(player, computer) {
   if (player === 'paper') {
     if (computer === 'rock') {
       return 1;
@@ -53,22 +47,37 @@ function game(player, computer) {
   }
 }
 
-let gameData = {
-  playOn: true,
-  score: 0,
-  numOfGames: 0,
-  wins: 0,
-  draws: 0,
-  losses: 0,
-};
+function toggleDisplay() {
+  // Get div elements and the current style applied
+  let resultsContainer = document.getElementById('results-container');
+  let gameContainer = document.getElementById('game-container');
+  let resultsContainerStyle = window.getComputedStyle(
+    document.getElementById('results-container')
+  ).display;
 
-while (gameData.playOn === true) {
+  // Check style of the results div and toggle display
+  resultsContainerStyle === 'none'
+    ? ((resultsContainer.style.display = 'block'),
+      (gameContainer.style.display = 'none'))
+    : ((resultsContainer.style.display = 'none'),
+      (gameContainer.style.display = 'block'));
+}
+
+function displayResult() {
+  let pTagResult = document.getElementById('game-data-text');
+  pTagResult.innerText = `Player is ${gameData.playerMove}, computer is ${gameData.computerMove}, result is ${gameData.result}. Score is ${gameData.score}. Games played: ${gameData.numOfGames}. Total wins: ${gameData.wins}. Total draws: ${gameData.draws}. Total losses: ${gameData.losses}.`;
+  toggleDisplay();
+}
+
+function playGame(playerMove) {
   let computerMove = genComputerMove();
-  let playerMove = prompt('move');
 
-  let result = game(playerMove, computerMove);
+  let result = calcWinner(playerMove, computerMove);
 
-  // Update records
+  // Update game data
+  gameData.result = result;
+  gameData.playerMove = playerMove;
+  gameData.computerMove = computerMove;
   gameData.score += result;
   gameData.numOfGames++;
   if (result === 1) {
@@ -79,9 +88,5 @@ while (gameData.playOn === true) {
     gameData.losses++;
   }
 
-  alert(
-    `Player is ${playerMove}, computer is ${computerMove}, Result is ${result}. Score is ${gameData.score}. Games played: ${gameData.numOfGames}. Total wins: ${gameData.wins}. Total draws: ${gameData.draws}. Total losses: ${gameData.losses}.`
-  );
-
-  gameData.playOn = confirm('Play again?');
+  displayResult();
 }
