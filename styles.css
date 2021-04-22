@@ -1,5 +1,6 @@
 :root {
   --vertical-padding: 1rem 0rem;
+  --custom-blue: #19547b;
 }
 
 html {
@@ -50,7 +51,7 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 60%;
+  width: 90%;
 }
 
 #results-container {
@@ -73,9 +74,39 @@ form {
   justify-content: center;
 }
 
-.game__button-box__img {
-  width: 30%;
-  padding: 0rem 1rem;
+.btn {
+  line-height: 1.5rem;
+  border-style: solid;
+  border-color: var(--custom-blue);
+  border-width: 1px;
+  background-color: transparent;
+  border-radius: 8px;
+  color: var(--custom-blue);
+  padding: 1rem 2rem;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition-duration: 200ms;
+}
+
+.btn:hover {
+  background-color: var(--custom-blue);
+  color: white;
+}
+
+.results {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.results__div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.results__img {
+  width: 40%;
 }
 
 img {
@@ -83,4 +114,15 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+#img-player,
+#img-computer {
+  padding-left: 1rem;
+}
+
+#computer-img-link {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  padding-right: 1rem;
 }

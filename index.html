@@ -33,33 +33,32 @@
           <div class="game" id="game-container">
             <h2 id="command-msg">Select your tool to play!</h2>
             <div class="game__button-box">
-              <div class="game__button-box__img">
-                <button onclick="playGame(`rock`)">Rock</button>
-              </div>
-              <div class="game__button-box__img">
-                <button onclick="playGame(`paper`)">Paper</button>
-              </div>
-              <div class="game__button-box__img">
-                <button onclick="playGame(`scissors`)">Scissors</button>
-              </div>
+              <a class="btn" onclick="playGame(`rock`)">Rock</a>
+
+              <a class="btn" onclick="playGame(`paper`)">Paper</a>
+
+              <a class="btn" onclick="playGame(`scissors`)">Scissors</a>
             </div>
           </div>
 
-          <div class="game" id="results-container">
-            <a id="player-img-link" href=""
-              ><img
-                src="https://source.unsplash.com/e25vPueMBY4"
-                alt="Hand photo by Diana Polekhina from Unsplash.com"
-                class=""
-                id="img-player"
-            /></a>
-            <a id="computer-img-link" href=""
-              ><img
-                src="https://source.unsplash.com/HrfV0D8ddcs"
-                alt="Hand photo by Diana Polekhina from Unsplash.com"
-                class=""
-                id="img-computer"
-            /></a>
+          <div class="results" id="results-container">
+            <div class="results__div">
+              <a class="results__img" id="player-img-link" href=""
+                ><img
+                  src="https://source.unsplash.com/e25vPueMBY4"
+                  alt="Hand photo by Diana Polekhina from Unsplash.com"
+                  class=""
+                  id="img-player"
+              /></a>
+              <a class="results__img" id="computer-img-link" href=""
+                ><img
+                  src="https://source.unsplash.com/HrfV0D8ddcs"
+                  alt="Hand photo by Diana Polekhina from Unsplash.com"
+                  class=""
+                  id="img-computer"
+              /></a>
+            </div>
+
             <p class="game__p" id="game-data-text"></p>
             <button
               class="game__button"
