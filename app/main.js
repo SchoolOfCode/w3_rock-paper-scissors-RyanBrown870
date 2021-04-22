@@ -11,6 +11,7 @@ let gameData = {
   user: '',
 };
 
+// Try including argument for function so only send the value through once?
 function formSubmit() {
   let usernameInput = document.getElementById('username-input');
   let username = usernameInput.value;
@@ -25,17 +26,16 @@ function formSubmit() {
     alert('Your username must begin with an uppercase letter');
   } else {
     gameData.user = username;
-    console.log(gameData);
   }
 
   let commandMsg = document.getElementById('command-msg');
-  commandMsg.innerText = `${gameData.user} Select your tool to play!`;
+  commandMsg.innerText = `${gameData.user}, select your tool to play!`;
 }
 
 // Add enter keydown listener
 // Bug - clears the console, is it firing multiple times?
 document.getElementById('username-input').addEventListener(
-  'keyup',
+  'keydown',
   (event) => {
     if (event.defaultPrevented) {
       return;
@@ -46,7 +46,7 @@ document.getElementById('username-input').addEventListener(
     }
     event.preventDefault;
   },
-  true
+  false
 );
 
 function genComputerMove() {
@@ -96,10 +96,10 @@ function toggleDisplay() {
 
   // Check style of the results div and toggle display
   resultsContainerStyle === 'none'
-    ? ((resultsContainer.style.display = 'block'),
+    ? ((resultsContainer.style.display = 'flex'),
       (gameContainer.style.display = 'none'))
     : ((resultsContainer.style.display = 'none'),
-      (gameContainer.style.display = 'block'));
+      (gameContainer.style.display = 'flex'));
 }
 
 function displayResult() {

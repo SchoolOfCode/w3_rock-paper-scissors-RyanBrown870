@@ -1,7 +1,68 @@
-.results {
+:root {
+  --vertical-padding: 1rem 0rem;
+}
+
+html {
+  font-size: 12px;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1,
+h2,
+h3,
+blockquote,
+p {
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+}
+
+header,
+form,
+.game,
+.game__button-box {
+  padding: var(--vertical-padding);
+}
+
+form {
+  display: flex;
+  justify-content: center;
+}
+
+.page-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-container__box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+}
+
+#results-container {
   display: none;
 }
 
 .game {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game__p {
+  padding: 1rem 0rem;
 }
