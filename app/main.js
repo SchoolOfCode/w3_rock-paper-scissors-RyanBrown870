@@ -11,6 +11,7 @@ let gameData = {
   user: '',
 };
 
+// Have a random username applied when no name is given? Use an api call?
 // Try including argument for function so only send the value through once?
 function formSubmit() {
   let usernameInput = document.getElementById('username-input');
