@@ -11,6 +11,25 @@ let gameData = {
   user: '',
 };
 
+let imgData = {
+  rock: {
+    src: 'https://source.unsplash.com/e25vPueMBY4',
+    alt: 'Hand fist photo by Diana Polekhina from Unsplash.com',
+    href: 'https://unsplash.com/photos/e25vPueMBY4',
+  },
+  paper: {
+    src: 'https://source.unsplash.com/HrfV0D8ddcs',
+    alt: 'Hand (spread) photo by Diana Polekhina from Unsplash.com',
+    href: 'https://unsplash.com/photos/HrfV0D8ddcs',
+  },
+  scissors: {
+    src: 'https://source.unsplash.com/XT6rBc_XKUI',
+    alt: 'Hand (two fingers) photo by Diana Polekhina from Unsplash.com',
+    href: 'https://unsplash.com/photos/XT6rBc_XKUI',
+  },
+};
+
+// Have a random username applied when no name is given? Use an api call?
 // Try including argument for function so only send the value through once?
 function formSubmit() {
   let usernameInput = document.getElementById('username-input');
@@ -105,6 +124,51 @@ function toggleDisplay() {
 function displayResult() {
   let p = document.getElementById('game-data-text');
   p.innerText = `Player is ${gameData.playerMove}, computer is ${gameData.computerMove}, result is ${gameData.result}. Score is ${gameData.score}. Games played: ${gameData.numOfGames}. Total wins: ${gameData.wins}. Total draws: ${gameData.draws}. Total losses: ${gameData.losses}.`;
+  let imgPlayer = document.getElementById('img-player');
+  let imgComputer = document.getElementById('img-computer');
+  let aPlayer = document.getElementById('player-img-link');
+  let aComputer = document.getElementById('computer-img-link');
+
+  switch (gameData.playerMove) {
+    case 'rock':
+      imgPlayer.src = imgData.rock.src;
+      imgPlayer.alt = imgData.rock.alt;
+      aPlayer.href = imgData.rock.href;
+      break;
+    case 'paper':
+      imgPlayer.src = imgData.paper.src;
+      imgPlayer.alt = imgData.paper.alt;
+      aPlayer.href = imgData.paper.href;
+      break;
+    case 'scissors':
+      imgPlayer.src = imgData.scissors.src;
+      imgPlayer.alt = imgData.scissors.alt;
+      aPlayer.href = imgData.scissors.href;
+      break;
+    default:
+      break;
+  }
+
+  switch (gameData.computerMove) {
+    case 'rock':
+      imgComputer.src = imgData.rock.src;
+      imgComputer.alt = imgData.rock.alt;
+      aComputer.href = imgData.rock.href;
+      break;
+    case 'paper':
+      imgComputer.src = imgData.paper.src;
+      imgComputer.alt = imgData.paper.alt;
+      aComputer.href = imgData.paper.href;
+      break;
+    case 'scissors':
+      imgComputer.src = imgData.scissors.src;
+      imgComputer.alt = imgData.scissors.alt;
+      aComputer.href = imgData.scissors.href;
+      break;
+    default:
+      break;
+  }
+
   toggleDisplay();
 }
 

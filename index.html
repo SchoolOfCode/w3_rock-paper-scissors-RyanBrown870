@@ -33,13 +33,33 @@
           <div class="game" id="game-container">
             <h2 id="command-msg">Select your tool to play!</h2>
             <div class="game__button-box">
-              <button onclick="playGame(`rock`)">Rock</button>
-              <button onclick="playGame(`paper`)">Paper</button>
-              <button onclick="playGame(`scissors`)">Scissors</button>
+              <div class="game__button-box__img">
+                <button onclick="playGame(`rock`)">Rock</button>
+              </div>
+              <div class="game__button-box__img">
+                <button onclick="playGame(`paper`)">Paper</button>
+              </div>
+              <div class="game__button-box__img">
+                <button onclick="playGame(`scissors`)">Scissors</button>
+              </div>
             </div>
           </div>
 
           <div class="game" id="results-container">
+            <a id="player-img-link" href=""
+              ><img
+                src="https://source.unsplash.com/e25vPueMBY4"
+                alt="Hand photo by Diana Polekhina from Unsplash.com"
+                class=""
+                id="img-player"
+            /></a>
+            <a id="computer-img-link" href=""
+              ><img
+                src="https://source.unsplash.com/HrfV0D8ddcs"
+                alt="Hand photo by Diana Polekhina from Unsplash.com"
+                class=""
+                id="img-computer"
+            /></a>
             <p class="game__p" id="game-data-text"></p>
             <button
               class="game__button"
@@ -50,7 +70,13 @@
             </button>
           </div>
         </main>
-        <footer></footer>
+        <footer>
+          <p>
+            Photos by
+            <a href="https://unsplash.com/@diana_pole">Diana Polekhina</a> on
+            <a href="https://unsplash.com/">Unsplash</a>
+          </p>
+        </footer>
       </div>
     </div>
     <script src="app/main.js" async defer></script>
