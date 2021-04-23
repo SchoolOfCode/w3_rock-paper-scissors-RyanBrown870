@@ -47,6 +47,8 @@ function formSubmit() {
     gameData.user = username;
   }
 
+  let form = document.getElementById('form');
+  form.style.visibility = 'hidden';
   let userName = document.getElementById('user');
   userName.innerText = `${gameData.user}`;
 }

@@ -16,18 +16,31 @@
     <div class="page-container">
       <div class="page-container__box">
         <header>
-          <h1>Rock, Paper, Scissors</h1>
+          <h1 class="heading">
+            Rock<span class="heading__underscore" id="first-underscore">_</span
+            >Paper<span class="heading__underscore" id="second-underscore"
+              >_</span
+            >Scissors
+          </h1>
         </header>
         <main>
-          <form>
-            <input type="text" name="username" id="username-input" required />
+          <form id="form">
             <input
+              placeholder="Enter your name here"
+              type="text"
+              name="username"
+              id="username-input"
+              required
+            />
+            <a
+              class="btn btn--submit"
               type="button"
               name="submit"
               value="submit"
               id="username-submit"
               onclick="formSubmit()"
-            />
+              >Submit</a
+            >
           </form>
 
           <section id="score-container">
