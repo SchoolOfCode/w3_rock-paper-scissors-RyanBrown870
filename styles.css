@@ -79,6 +79,19 @@ form {
   font-weight: bold;
 }
 
+.separator {
+  display: none;
+  justify-content: center;
+  width: 100%;
+}
+
+.separator__line {
+  width: 90%;
+  border-top: solid;
+  border-color: #bc3e3e;
+  border-width: 1px;
+}
+
 #score-container {
   display: flex;
   justify-content: center;
@@ -145,6 +158,10 @@ form {
   display: flex;
   justify-content: space-between;
   padding-top: 1.5rem;
+}
+
+#command-msg {
+  color: #7f7f7f;
 }
 
 .btn {

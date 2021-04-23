@@ -52,6 +52,8 @@ function formSubmit() {
   let userName = document.getElementById('user');
   userName.innerText = `${gameData.user}`;
   userName.style.display = 'block';
+  let separator = document.getElementById('user-underline');
+  separator.style.display = 'flex';
 }
 
 // Add enter keydown listener
