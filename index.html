@@ -1,16 +1,130 @@
 <!DOCTYPE html>
 <html lang="en-GB">
-<head>
-<link rel="stylesheet" href="rps.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Rock, Paper, Scissors Game</title>
+    <meta
+      name="Rock, Paper, Scissors Game"
+      content="Game for users to play rock, paper, scissors against the computer and track their scores."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="reset.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-container">
+      <div class="page-container__box">
+        <header>
+          <h1 class="heading">
+            Rock<span class="heading__underscore" id="first-underscore">_</span
+            >Paper<span class="heading__underscore" id="second-underscore"
+              >_</span
+            >Scissor<span class="heading__underscore" id="title-animation"
+              >s</span
+            >
+          </h1>
+        </header>
+        <main>
+          <form id="form">
+            <input
+              placeholder="Enter your name here"
+              type="text"
+              name="username"
+              id="username-input"
+              required
+            />
+            <a
+              class="btn btn--submit"
+              type="button"
+              name="submit"
+              value="submit"
+              id="username-submit"
+              onclick="formSubmit()"
+              >Submit</a
+            >
+          </form>
 
-</head>
-<body>
-    <button onclick="gameFunction(this.id)" id="rock" >Rock</button>
-    <button onclick="gameFunction(this.id)" id="paper">Paper</button>
-    <button onclick="gameFunction(this.id)" id="scissors">Scissors</button>    
-    <!-- <button onclick="rockFunction()" id="rock" >Rock</button>
-    <button onclick="paperFunction()" id="paper">Paper</button>
-    <button onclick="scissorsFunction()" id="scissors">Scissors</button> -->
-    <script src="main.js" type="text/javascript"></script>
-</body>
+          <section id="score-container">
+            <div class="score">
+              <h2 class="score__user" id="user"></h2>
+              <div class="separator" id="user-underline">
+                <div class="separator__line"></div>
+              </div>
+              <h2 class="score__title" id="current-round">ROUND 0</h2>
+              <div class="score__result">
+                <h2 class="score__result--grey">WIN</h2>
+                <h3 class="score__result--blue" id="win-counter">0</h3>
+              </div>
+              <div class="score__result">
+                <h2 class="score__result--grey">DRAW</h2>
+                <h3 class="score__result--blue" id="draw-counter">0</h3>
+              </div>
+              <div class="score__result">
+                <h2 class="score__result--grey">WIN</h2>
+                <h3 class="score__result--blue" id="loss-counter">0</h3>
+              </div>
+            </div>
+          </section>
+
+          <div class="results" id="results-container">
+            <div class="results__div">
+              <a
+                class="results__img"
+                id="player-img-link"
+                href="https://unsplash.com/photos/e25vPueMBY4"
+                ><img
+                  src="https://source.unsplash.com/e25vPueMBY4"
+                  alt="Hand photo by Diana Polekhina from Unsplash.com"
+                  class="results__img--img results__img--border-gradient results__img--border-gradient-red"
+                  id="img-player"
+              /></a>
+              <div class="results__display">
+                <p class="results__display--red" id="display-result"></p>
+              </div>
+
+              <a
+                class="results__img"
+                id="computer-img-link"
+                href="https://unsplash.com/photos/e25vPueMBY4"
+                ><img
+                  src="https://source.unsplash.com/e25vPueMBY4"
+                  alt="Hand photo by Diana Polekhina from Unsplash.com"
+                  class="results__img--img results__img--border-gradient results__img--border-gradient-red"
+                  id="img-computer"
+              /></a>
+            </div>
+
+            <div class="game" id="game-container">
+              <h2 id="command-msg">Select your tool to play!</h2>
+              <div class="game__button-box">
+                <a class="btn btn--width" onclick="playGame(`rock`)">Rock</a>
+
+                <a class="btn btn--width" onclick="playGame(`paper`)">Paper</a>
+
+                <a class="btn btn--width" onclick="playGame(`scissors`)"
+                  >Scissors</a
+                >
+              </div>
+            </div>
+
+            <div class="play-again" id="game-score-container">
+              <h3 class="play-again__text" id="quote"></h3>
+              <a class="btn" onclick="toggleDisplay()" id="play-button"
+                >Play again?</a
+              >
+            </div>
+          </div>
+        </main>
+        <footer>
+          <p class="footer">
+            Photos by
+            <a href="https://unsplash.com/@diana_pole">Diana Polekhina</a> on
+            <a href="https://unsplash.com/">Unsplash</a>
+          </p>
+        </footer>
+      </div>
+    </div>
+    <script src="app/main.js" async defer></script>
+  </body>
 </html>
