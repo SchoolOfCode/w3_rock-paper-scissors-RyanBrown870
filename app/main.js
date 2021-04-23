@@ -47,8 +47,8 @@ function formSubmit() {
     gameData.user = username;
   }
 
-  let commandMsg = document.getElementById('command-msg');
-  commandMsg.innerText = `${gameData.user}, select your tool to play!`;
+  let userName = document.getElementById('user');
+  userName.innerText = `${gameData.user}`;
 }
 
 // Add enter keydown listener

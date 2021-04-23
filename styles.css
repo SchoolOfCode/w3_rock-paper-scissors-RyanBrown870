@@ -57,6 +57,7 @@ form {
 #score-container {
   display: flex;
   justify-content: center;
+  padding: 1rem 0rem;
 }
 
 .score {
@@ -64,6 +65,14 @@ form {
   flex-wrap: wrap;
   justify-content: space-between;
   width: 80%;
+}
+
+.score__user {
+  width: 100%;
+  text-align: center;
+  font-size: 1.5rem;
+  color: var(--custom-red);
+  padding: 1rem 0rem;
 }
 
 .score__title {
@@ -79,6 +88,7 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 1rem;
 }
 
 .score__result--grey {
@@ -105,9 +115,9 @@ form {
 }
 
 .game__button-box {
-  width: 100vw;
+  width: 85%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .btn {
@@ -158,10 +168,6 @@ img {
   transform: scaleX(-1);
 }
 
-.game-score {
-  display: none;
-}
-
 #display-result {
   color: var(--custom-red);
   font-weight: bold;
@@ -172,4 +178,10 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.play-again {
+  display: none;
+  justify-content: center;
+  padding: 2rem 0rem;
 }
