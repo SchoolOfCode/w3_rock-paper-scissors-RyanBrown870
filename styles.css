@@ -321,3 +321,82 @@ img {
 footer a {
   color: #c0c0c0;
 }
+
+@media (min-width: 1200px) {
+  .page-container__box {
+    justify-content: space-between;
+  }
+  #username-submit {
+    width: 7%;
+    text-align: center;
+  }
+  .results__img {
+    width: 20%;
+    padding-left: 0rem;
+  }
+
+  .results__div {
+    justify-content: space-evenly;
+  }
+
+  .score {
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  .btn--width,
+  #play-button {
+    width: 8%;
+    font-size: 1.2rem;
+  }
+
+  .btn {
+    padding: 0.7rem 0rem;
+  }
+
+  .score__result--blue {
+    text-align: center;
+  }
+
+  .separator__line {
+    width: 80%;
+  }
+
+  .heading {
+    font-size: 3.5rem;
+  }
+
+  .score__user {
+    font-size: 2rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .score__title {
+    font-size: 2rem;
+    line-height: 1;
+  }
+
+  .score__result--grey {
+    font-size: 1.7rem;
+  }
+
+  .score__result--blue {
+    font-size: 4rem;
+  }
+
+  #display-result {
+    font-size: 2.5rem;
+  }
+
+  .game__button-box {
+    justify-content: space-evenly;
+  }
+
+  #command-msg {
+    font-size: 1.8rem;
+  }
+
+  .play-again__text {
+    font-size: 1.5rem;
+  }
+}
