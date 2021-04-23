@@ -1,6 +1,6 @@
 :root {
   --vertical-padding: 1rem 0rem;
-  --custom-blue: #19547b;
+  --custom-red: #b22222;
 }
 
 html {
@@ -54,6 +54,46 @@ form {
   width: 90%;
 }
 
+#score-container {
+  display: flex;
+  justify-content: center;
+}
+
+.score {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 80%;
+}
+
+.score__title {
+  width: 100%;
+  text-align: center;
+  padding: 1rem 0rem;
+  font-size: 1.8rem;
+  font-weight: normal;
+  color: var(--custom-red);
+}
+
+.score__result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.score__result--grey {
+  font-size: 1.2rem;
+  color: #c0c0c0;
+  font-weight: normal;
+}
+
+.score__result--blue {
+  line-height: 1;
+  font-size: 3rem;
+  font-weight: normal;
+  color: var(--custom-red);
+}
+
 #results-container {
   display: none;
 }
@@ -77,11 +117,11 @@ form {
 .btn {
   line-height: 1.5rem;
   border-style: solid;
-  border-color: var(--custom-blue);
+  border-color: var(--custom-red);
   border-width: 1px;
   background-color: transparent;
   border-radius: 8px;
-  color: var(--custom-blue);
+  color: var(--custom-red);
   padding: 1rem 2rem;
   text-transform: uppercase;
   font-size: 1.2rem;
@@ -90,7 +130,7 @@ form {
 }
 
 .btn:hover {
-  background-color: var(--custom-blue);
+  background-color: var(--custom-red);
   color: white;
 }
 
