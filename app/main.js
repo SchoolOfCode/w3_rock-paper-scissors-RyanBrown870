@@ -107,10 +107,10 @@ function calcWinner(player, computer) {
 
 function toggleDisplay() {
   // Get div elements and the current style applied
-  let resultsContainer = document.getElementById('results-container');
+  let resultsContainer = document.getElementById('game-score-container');
   let gameContainer = document.getElementById('game-container');
   let resultsContainerStyle = window.getComputedStyle(
-    document.getElementById('results-container')
+    document.getElementById('game-score-container')
   ).display;
 
   // Check style of the results div and toggle display
@@ -122,8 +122,15 @@ function toggleDisplay() {
 }
 
 function displayResult() {
-  let p = document.getElementById('game-data-text');
-  p.innerText = `Player is ${gameData.playerMove}, computer is ${gameData.computerMove}, result is ${gameData.result}. Score is ${gameData.score}. Games played: ${gameData.numOfGames}. Total wins: ${gameData.wins}. Total draws: ${gameData.draws}. Total losses: ${gameData.losses}.`;
+  let p = document.getElementById('display-result');
+  if (gameData.result === 1) {
+    p.innerText = 'WON!';
+  } else if (gameData.result === 0) {
+    p.innerText = 'DRAW!';
+  } else if (gameData.result === -1) {
+    p.innerText = 'LOST!';
+  }
+
   let imgPlayer = document.getElementById('img-player');
   let imgComputer = document.getElementById('img-computer');
   let aPlayer = document.getElementById('player-img-link');
@@ -185,6 +192,7 @@ function updateResults(result, playerMove, computerMove) {
   } else {
     gameData.losses++;
   }
+  console.log(gameData.result);
 }
 
 function playGame(playerMove) {

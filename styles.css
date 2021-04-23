@@ -42,6 +42,7 @@ form {
 
 .page-container {
   height: 100vh;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -51,7 +52,6 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 90%;
 }
 
 #score-container {
@@ -92,10 +92,6 @@ form {
   font-size: 3rem;
   font-weight: normal;
   color: var(--custom-red);
-}
-
-#results-container {
-  display: none;
 }
 
 .game {
@@ -147,6 +143,7 @@ form {
 
 .results__img {
   width: 40%;
+  padding-left: 1rem;
 }
 
 img {
@@ -156,13 +153,23 @@ img {
   object-fit: cover;
 }
 
-#img-player,
-#img-computer {
-  padding-left: 1rem;
-}
-
 #computer-img-link {
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
-  padding-right: 1rem;
+}
+
+.game-score {
+  display: none;
+}
+
+#display-result {
+  color: var(--custom-red);
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.results__display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

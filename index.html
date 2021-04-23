@@ -48,17 +48,6 @@
             </div>
           </section>
 
-          <div class="game" id="game-container">
-            <h2 id="command-msg">Select your tool to play!</h2>
-            <div class="game__button-box">
-              <a class="btn" onclick="playGame(`rock`)">Rock</a>
-
-              <a class="btn" onclick="playGame(`paper`)">Paper</a>
-
-              <a class="btn" onclick="playGame(`scissors`)">Scissors</a>
-            </div>
-          </div>
-
           <div class="results" id="results-container">
             <div class="results__div">
               <a
@@ -71,6 +60,10 @@
                   class=""
                   id="img-player"
               /></a>
+              <div class="results__display">
+                <p class="results__display--red" id="display-result"></p>
+              </div>
+
               <a
                 class="results__img"
                 id="computer-img-link"
@@ -83,14 +76,27 @@
               /></a>
             </div>
 
-            <p class="game__p" id="game-data-text"></p>
-            <button
-              class="game__button"
-              onclick="toggleDisplay()"
-              id="play-button"
-            >
-              Play Again?
-            </button>
+            <div class="game" id="game-container">
+              <h2 id="command-msg">Select your tool to play!</h2>
+              <div class="game__button-box">
+                <a class="btn" onclick="playGame(`rock`)">Rock</a>
+
+                <a class="btn" onclick="playGame(`paper`)">Paper</a>
+
+                <a class="btn" onclick="playGame(`scissors`)">Scissors</a>
+              </div>
+            </div>
+
+            <div class="game-score" id="game-score-container">
+              <p class="game__p" id="game-data-text"></p>
+              <button
+                class="game__button"
+                onclick="toggleDisplay()"
+                id="play-button"
+              >
+                Play Again?
+              </button>
+            </div>
           </div>
         </main>
         <footer>
