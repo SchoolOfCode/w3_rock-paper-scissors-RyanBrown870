@@ -32,18 +32,18 @@
 
           <section id="score-container">
             <div class="score">
-              <h2 class="score__title">ROUND 0</h2>
+              <h2 class="score__title" id="current-round">ROUND 0</h2>
               <div class="score__result">
                 <h2 class="score__result--grey">WIN</h2>
-                <h3 class="score__result--blue">0</h3>
+                <h3 class="score__result--blue" id="win-counter">0</h3>
               </div>
               <div class="score__result">
                 <h2 class="score__result--grey">DRAW</h2>
-                <h3 class="score__result--blue">0</h3>
+                <h3 class="score__result--blue" id="draw-counter">0</h3>
               </div>
               <div class="score__result">
                 <h2 class="score__result--grey">WIN</h2>
-                <h3 class="score__result--blue">0</h3>
+                <h3 class="score__result--blue" id="loss-counter">0</h3>
               </div>
             </div>
           </section>
@@ -88,14 +88,9 @@
             </div>
 
             <div class="game-score" id="game-score-container">
-              <p class="game__p" id="game-data-text"></p>
-              <button
-                class="game__button"
-                onclick="toggleDisplay()"
-                id="play-button"
+              <a class="btn" onclick="toggleDisplay()" id="play-button"
+                >Play again?</a
               >
-                Play Again?
-              </button>
             </div>
           </div>
         </main>

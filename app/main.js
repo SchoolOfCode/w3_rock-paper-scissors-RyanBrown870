@@ -131,6 +131,15 @@ function displayResult() {
     p.innerText = 'LOST!';
   }
 
+  let currentRound = document.getElementById('current-round');
+  currentRound.innerText = `ROUND ${gameData.numOfGames}`;
+  let winCounter = document.getElementById('win-counter');
+  winCounter.innerText = `${gameData.wins}`;
+  let drawCounter = document.getElementById('draw-counter');
+  drawCounter.innerText = `${gameData.draws}`;
+  let lossCounter = document.getElementById('loss-counter');
+  lossCounter.innerText = `${gameData.losses}`;
+
   let imgPlayer = document.getElementById('img-player');
   let imgComputer = document.getElementById('img-computer');
   let aPlayer = document.getElementById('player-img-link');
@@ -192,7 +201,6 @@ function updateResults(result, playerMove, computerMove) {
   } else {
     gameData.losses++;
   }
-  console.log(gameData.result);
 }
 
 function playGame(playerMove) {
