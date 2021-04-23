@@ -237,6 +237,21 @@ img {
 
 .play-again {
   display: none;
+  flex-direction: column;
   justify-content: center;
-  padding: 2rem 0rem;
+  align-items: center;
+  padding: 1rem 0rem;
+}
+
+.play-again__text {
+  padding-bottom: 1rem;
+  font-style: italic;
+  color: #7f7f7f;
+  font-weight: normal;
+  width: 80%;
+  text-align: center;
+}
+
+#play-button {
+  width: 25%;
 }

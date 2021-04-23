@@ -1,3 +1,18 @@
+const quotes = [
+  'The good fighters of old first put themselves beyond the possibility of defeat, and then waited for an opportunity of defeating the enemy.',
+  'All warfare is based on deception.',
+  'The supreme art of war is to subdue the enemy without fighting.',
+  "Hence to fight and conquer in all your battles is not supreme excellence; supreme excellence consists in breaking the enemy's resistance without fighting.",
+  'Strategy without tactics is the slowest route to victory. Tactics without strategy is the noise before defeat.',
+  'Victorious warriors win first and then go to war, while defeated warriors go to war first and then seek to win.',
+  'The opportunity to secure ourselves against defeat lies in our own hands, but the opportunity of defeating the enemy is provided by the enemy himself.',
+  'Opportunities multiply as they are seized.',
+  'There is no instance of a nation benefitting from prolonged warfare.',
+  'Pretend inferiority and encourage his arrogance.',
+];
+
+let moveSet = ['rock', 'paper', 'scissors'];
+
 let gameData = {
   playerMove: '',
   computerMove: '',
@@ -73,9 +88,8 @@ document.getElementById('username-input').addEventListener(
   false
 );
 
-function genComputerMove() {
-  let moveSet = ['rock', 'paper', 'scissors'];
-  return moveSet[Math.floor(Math.random() * 3)];
+function randomArr(arr) {
+  return arr[Math.floor(Math.random() * arr.length)];
 }
 
 function calcWinner(player, computer) {
@@ -190,6 +204,10 @@ function displayResult() {
       break;
   }
 
+  // Generate quote
+  let quoteHeader = document.getElementById('quote');
+  quoteHeader.innerText = randomArr(quotes);
+
   toggleDisplay();
 }
 
@@ -209,10 +227,11 @@ function updateResults(result, playerMove, computerMove) {
 }
 
 function playGame(playerMove) {
-  let computerMove = genComputerMove();
+  let computerMove = randomArr(moveSet);
 
   let result = calcWinner(playerMove, computerMove);
 
   updateResults(result, playerMove, computerMove);
   displayResult();
+  console.log(gameData);
 }
