@@ -48,9 +48,10 @@ function formSubmit() {
   }
 
   let form = document.getElementById('form');
-  form.style.visibility = 'hidden';
+  form.style.display = 'none';
   let userName = document.getElementById('user');
   userName.innerText = `${gameData.user}`;
+  userName.style.display = 'block';
 }
 
 // Add enter keydown listener

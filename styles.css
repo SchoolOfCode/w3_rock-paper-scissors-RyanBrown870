@@ -29,16 +29,10 @@ h6 {
   font-weight: bold;
 }
 
-header,
-form,
-.game,
-.game__button-box {
-  padding: var(--vertical-padding);
-}
-
 form {
   display: flex;
   justify-content: center;
+  padding-bottom: 1rem;
 }
 
 .page-container {
@@ -51,13 +45,13 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .heading {
   color: #2f4f4f;
   font-size: 3.5rem;
-  padding: 1rem 2rem;
+  padding: 0rem 2rem 0rem 2rem;
   text-align: center;
 }
 
@@ -88,7 +82,7 @@ form {
 #score-container {
   display: flex;
   justify-content: center;
-  padding: 1rem 0rem;
+  padding-bottom: 1rem;
 }
 
 .score {
@@ -103,7 +97,8 @@ form {
   text-align: center;
   font-size: 1.5rem;
   color: var(--custom-red);
-  padding: 1rem 0rem;
+  padding-bottom: 1rem;
+  display: none;
 }
 
 .score__title {
@@ -149,6 +144,7 @@ form {
   width: 85%;
   display: flex;
   justify-content: space-between;
+  padding-top: 1.5rem;
 }
 
 .btn {
@@ -184,6 +180,7 @@ form {
 .results__div {
   display: flex;
   justify-content: space-between;
+  padding-bottom: 3rem;
 }
 
 .results__img {
