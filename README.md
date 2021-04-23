@@ -10,8 +10,8 @@ We will hard-code each move in variables so that we can check our game logic, bu
 
 ```js
 // change these variables to test your code
-let playerMove = "rock";
-let computerMove = "paper";
+let playerMove = 'rock';
+let computerMove = 'paper';
 ```
 
 Plan out the possible combinations of rock, paper and scissors for the two moves. Then convert that logic to code and console.log the result of the game.
@@ -33,7 +33,7 @@ function getWinner(player1, player2) {
   // code goes here...
 }
 
-let result = getWinner("rock", "paper");
+let result = getWinner('rock', 'paper');
 ```
 
 This will be deemed as complete when the function can be called with any combination of valid moves and returns the appropriate number.
