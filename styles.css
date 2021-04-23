@@ -301,6 +301,7 @@ img {
   justify-content: center;
   align-items: center;
   padding: 1rem 0rem;
+  text-align: center;
 }
 
 .play-again__text {
