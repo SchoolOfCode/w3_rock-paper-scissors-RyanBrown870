@@ -171,6 +171,12 @@ form {
   color: white;
 }
 
+.btn--width {
+  padding: 0.45rem 0rem;
+  width: 25%;
+  text-align: center;
+}
+
 .results {
   display: flex;
   flex-direction: column;
