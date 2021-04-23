@@ -4,6 +4,8 @@
   --custom-blue: #22b2b2;
 }
 
+/* To Do: refactor styling to save repetition */
+
 html {
   font-size: 12px;
 }
@@ -218,6 +220,26 @@ img {
   object-fit: cover;
 }
 
+.results__img--img {
+  background: none;
+}
+
+.results__img--border-gradient {
+  border: 4px solid;
+  border-image-slice: 1;
+  border-width: 4px;
+}
+
+.results__img--border-gradient-red {
+  border-image-source: var(--custom-red); /* fallback for old browsers */
+  border-image-source: -webkit-linear-gradient(
+    to right,
+    #19547b,
+    var(--custom-red)
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  border-image-source: linear-gradient(to right, #19547b, var(--custom-red));
+}
+
 #computer-img-link {
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
@@ -254,4 +276,9 @@ img {
 
 #play-button {
   width: 25%;
+}
+
+.footer,
+footer a {
+  color: #c0c0c0;
 }
