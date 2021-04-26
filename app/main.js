@@ -51,24 +51,30 @@ function formSubmit() {
   let username = usernameInput.value;
 
   if (username.length > 10) {
-    alert('Your username must be 10 or fewer characters');
+    let alert = document.getElementById('alert');
+    alert.innerText = 'Your username must be 10 or fewer characters';
+    alert.style.display = 'block';
   } else if (!username[0].match(/[a-zA-Z]/)) {
-    alert(
-      'Your username must begin with a letter. Numbers or special characters are not allowed.'
-    );
+    let alert = document.getElementById('alert');
+    alert.innerText =
+      'Your username must begin with a letter. Numbers or special characters are not allowed.';
+    alert.style.display = 'block';
   } else if (username[0].match(/[a-z]/)) {
-    alert('Your username must begin with an uppercase letter');
+    let alert = document.getElementById('alert');
+    alert.innerText = 'Your username must begin with an uppercase letter';
+    alert.style.display = 'block';
   } else {
     gameData.user = username;
+    let alert = document.getElementById('alert');
+    alert.style.display = 'none';
+    let form = document.getElementById('form');
+    form.style.display = 'none';
+    let userName = document.getElementById('user');
+    userName.innerText = `${gameData.user}`;
+    userName.style.display = 'block';
+    let separator = document.getElementById('user-underline');
+    separator.style.display = 'flex';
   }
-
-  let form = document.getElementById('form');
-  form.style.display = 'none';
-  let userName = document.getElementById('user');
-  userName.innerText = `${gameData.user}`;
-  userName.style.display = 'block';
-  let separator = document.getElementById('user-underline');
-  separator.style.display = 'flex';
 }
 
 // Add enter keydown listener

@@ -118,6 +118,20 @@ form {
   font-weight: bold;
 }
 
+#alert {
+  display: none;
+  color: red;
+  font-weight: bold;
+  text-align: center;
+  width: 70%;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .separator {
   display: none;
   justify-content: center;
