@@ -23,5 +23,4 @@ Below is a list of issues/bugs that I am aware of but didn't have time to correc
 5. The main content is not centred vertically perfectly due to the use of flex. I needed to get the header and footer at the top and bottom of the page but I don't think the main content is in exactly the right position.
 6. The main.js file is too big, I wanted to split it into modules and import the functions but doing this was not as straightforward as I first thought. I think you have to set up modules correctly and link them in the HTML file in a certain way.
 7. Some of the js functions are quite rushed and could do with refactoring for better separation of concerns.
-8. Still using alerts for incorrect usernames when this should be handled through the DOM ideally (I forgot this step).
-9. Can't use the return key to submit the username. I think this is due to default event behaviour and possibly many events firing and overwriting the submitted name (so that the _final_ username is an empty string).
+8. Can't use the return key to submit the username. I think this is due to default event behaviour and possibly many events firing and overwriting the submitted name (so that the _final_ username is an empty string).
