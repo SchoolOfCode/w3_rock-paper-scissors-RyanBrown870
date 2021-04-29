@@ -1,0 +1,402 @@
+:root {
+  --vertical-padding: 1rem 0rem;
+  --custom-red: #b22222;
+  --custom-blue: #22b2b2;
+}
+
+/* To Do: refactor styling to save repetition */
+
+html {
+  font-size: 12px;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1,
+h2,
+h3,
+blockquote,
+p {
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1rem;
+}
+
+.page-container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+}
+
+.page-container__box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.heading {
+  color: #2f4f4f;
+  font-size: 3.5rem;
+  padding: 0rem 2rem 0rem 2rem;
+  text-align: center;
+}
+
+.heading__underscore {
+  font-weight: bold;
+}
+
+@keyframes flash {
+  10% {
+    opacity: 0;
+  }
+
+  22% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  58% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 0;
+  }
+}
+
+@keyframes flash_s {
+  50% {
+    opacity: 0;
+  }
+}
+
+#first-underscore {
+  animation: flash 1s step-start 1;
+  animation-delay: 1s;
+}
+
+#second-underscore {
+  animation: flash_s 1s step-start infinite;
+  animation-delay: 3.2s;
+}
+
+#title-animation {
+  animation: flash 2s step-start 1;
+  animation-delay: 1.2s;
+}
+
+#username-input {
+  margin-right: 0.7rem;
+  line-height: 1.5rem;
+  border-style: solid;
+  border-color: var(--custom-red);
+  border-width: 1px;
+  background-color: transparent;
+  border-radius: 8px;
+  color: var(--custom-red);
+  padding: 0.45rem 1.4rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.separator {
+  display: none;
+  justify-content: center;
+  width: 100%;
+}
+
+.separator__line {
+  width: 90%;
+  border-top: solid;
+  border-color: #bc3e3e;
+  border-width: 1px;
+}
+
+#score-container {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1rem;
+}
+
+.score {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 80%;
+}
+
+.score__user {
+  width: 100%;
+  text-align: center;
+  font-size: 1.5rem;
+  color: var(--custom-red);
+  padding-bottom: 1rem;
+  display: none;
+}
+
+.score__title {
+  width: 100%;
+  text-align: center;
+  padding: 1rem 0rem;
+  font-size: 1.8rem;
+  font-weight: normal;
+  color: var(--custom-red);
+}
+
+.score__result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1rem;
+}
+
+.score__result--grey {
+  font-size: 1.2rem;
+  color: #c0c0c0;
+  font-weight: normal;
+}
+
+.score__result--blue {
+  line-height: 1;
+  font-size: 3rem;
+  font-weight: normal;
+  color: var(--custom-red);
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game__p {
+  padding: 1rem 0rem;
+}
+
+.game__button-box {
+  width: 85%;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1.5rem;
+}
+
+#command-msg {
+  color: #7f7f7f;
+}
+
+.btn {
+  line-height: 1.5rem;
+  border-style: solid;
+  border-color: var(--custom-red);
+  border-width: 1px;
+  background-color: transparent;
+  border-radius: 8px;
+  color: var(--custom-red);
+  padding: 0.45rem 1.4rem;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition-duration: 200ms;
+}
+
+.btn--submit {
+  transition-duration: 0ms;
+}
+
+.btn:hover {
+  background-color: var(--custom-red);
+  color: white;
+}
+
+.btn--width {
+  padding: 0.45rem 0rem;
+  width: 25%;
+  text-align: center;
+}
+
+.results {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.results__div {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 3rem;
+}
+
+.results__img {
+  width: 40%;
+  padding-left: 1rem;
+}
+
+img {
+  float: left;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.results__img--img {
+  background: none;
+}
+
+.results__img--border-gradient {
+  border: 4px solid;
+  border-image-slice: 1;
+  border-width: 4px;
+}
+
+.results__img--border-gradient-red {
+  border-image-source: var(--custom-red); /* fallback for old browsers */
+  border-image-source: -webkit-linear-gradient(
+    to right,
+    #19547b,
+    var(--custom-red)
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  border-image-source: linear-gradient(to right, #19547b, var(--custom-red));
+}
+
+/* Bug - scissors image not orienting correctly */
+#computer-img-link {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+#display-result {
+  color: var(--custom-red);
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.results__display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.play-again {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0rem;
+  text-align: center;
+}
+
+.play-again__text {
+  padding-bottom: 1.5rem;
+  font-style: italic;
+  color: #7f7f7f;
+  font-weight: normal;
+  width: 80%;
+  text-align: center;
+}
+
+#play-button {
+  width: 25%;
+}
+
+.footer,
+footer a {
+  color: #c0c0c0;
+}
+
+@media (min-width: 1200px) {
+  .page-container__box {
+    justify-content: space-between;
+  }
+  #username-submit {
+    width: 7%;
+    text-align: center;
+  }
+  .results__img {
+    width: 20%;
+    padding-left: 0rem;
+  }
+
+  .results__div {
+    justify-content: space-evenly;
+  }
+
+  .score {
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  .btn--width,
+  #play-button {
+    width: 8%;
+    font-size: 1.2rem;
+  }
+
+  .btn {
+    padding: 0.7rem 0rem;
+  }
+
+  .score__result--blue {
+    text-align: center;
+  }
+
+  .separator__line {
+    width: 80%;
+  }
+
+  .heading {
+    font-size: 3.5rem;
+  }
+
+  .score__user {
+    font-size: 2rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .score__title {
+    font-size: 2rem;
+    line-height: 1;
+  }
+
+  .score__result--grey {
+    font-size: 1.7rem;
+  }
+
+  .score__result--blue {
+    font-size: 4rem;
+  }
+
+  #display-result {
+    font-size: 2.5rem;
+  }
+
+  .game__button-box {
+    justify-content: space-evenly;
+  }
+
+  #command-msg {
+    font-size: 1.8rem;
+  }
+
+  .play-again__text {
+    font-size: 1.5rem;
+  }
+}
