@@ -44,8 +44,6 @@ let imgData = {
   },
 };
 
-// Have a random username applied when no name is given? Use an api call?
-// Try including argument for function so only send the value through once?
 function formSubmit() {
   let usernameInput = document.getElementById('username-input');
   let username = usernameInput.value;
@@ -78,21 +76,14 @@ function formSubmit() {
 }
 
 // Add enter keydown listener
-// Bug - clears the console, is it firing multiple times?
-document.getElementById('username-input').addEventListener(
-  'keydown',
-  (event) => {
-    if (event.defaultPrevented) {
-      return;
-    }
+document
+  .getElementById('username-input')
+  .addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
-      console.log('enter event listener');
+      event.preventDefault();
       formSubmit();
     }
-    event.preventDefault;
-  },
-  false
-);
+  });
 
 function randomArr(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
